@@ -1,25 +1,39 @@
 // Aqui serão criados os eventos de Manipulação de DOM e templates
-import { greeting } from './data.js';
+import { userLogin, loginGoogle } from './data.js';
 
 export const home = () => {
   const container = document.createElement('div');
 
-  container.innerHTML = `
-    <form>
-      <input id='name' type='text'>
-      <button id='greeting-btn'>Dizer Oi</button>
-    </form>
-    <div id='greeting-message'></div>
+  container.innerHTML = `<div class='logo'><figure class="image">
+  <img src="../../assets/logo-sos.png" class='img-logo'>
+</figure></div>
+   <div class='dcontainer-home'> 
+  <ul class="list-home">
+  <li><input id="email" class="btn" placeholder='example@example.com' type='email'></li>
+  <li><input id="password" class="btn" placeholder='Digite sua senha' type='password'></li>
+  <li><button id='login-btn' class='login-btn'>Login</button></li>
+  <li><button id='google-btn'>Google</button></li>
+  <li><p>Ainda não tem conta?<a href='#register'>Registre-se!</a></p></li>
+</ul>
+    </div>
   `;
 
-  const name = container.querySelector('#name');
-  const greetingBtn = container.querySelector('#greeting-btn');
-  const greetingMessage = container.querySelector('#greeting-message');
+  const email = container.querySelector('#email');
+  const password = container.querySelector('#password');
+  const loginBtn = container.querySelector('#login-btn');
+  const googleBtn = container.querySelector('#google-btn')
 
-  greetingBtn.addEventListener('click', (event) => {
+
+  loginBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    greetingMessage.innerHTML = greeting(name.value);
+    userLogin(email.value, password.value)
   });
+
+  googleBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    loginGoogle()
+  })
 
   return container;
 };
+
