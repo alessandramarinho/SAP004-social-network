@@ -7,7 +7,7 @@ export const home = () => {
   container.innerHTML = `<div class='logo'><figure class="image">
   <img src="../../assets/logo-sos.png" class='img-logo'>
 </figure></div>
-   <div class='dcontainer-home'> 
+  <div class='dcontainer-home'> 
   <ul class="list-home">
   <li><input id="email" class="btn" placeholder='example@example.com' type='email'></li>
   <li><input id="password" class="btn" placeholder='Digite sua senha' type='password'></li>
@@ -26,7 +26,9 @@ export const home = () => {
 
   loginBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    userLogin(email.value, password.value)
+    userLogin(email.value, password.value);
+    email.value = "";
+    password.value = "";
   });
 
   googleBtn.addEventListener('click', (event) => {

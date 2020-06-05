@@ -10,6 +10,10 @@ export const userLogin = (email, password) => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      var msgError = 'The password is invalid or the user does not have a password.'
+      console.log(errorCode);
+      console.log(errorMessage);
+      alert(msgError);
       // ...
     }); email - password.html
 }
