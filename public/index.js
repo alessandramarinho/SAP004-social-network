@@ -17,12 +17,28 @@ const init = () => {
   })
 }
 
-const renderPage = () => {
+/* const renderPage = () => {
   main.innerHTML = "";
     const page = validateHash(window.location.hash)
     main.appendChild(routes[page]);
+} */
+const renderPage = () => {
+  const page = validateHash(window.location.hash)
+  firebase.auth().onAuthStateChanged((user) => {
+  if (!user) {
+    main.innerHTML = "";
+    if(page === 'home'){
+      main.appendChild(routes.home)
+    } else if (page === 'register'){
+      main.appendChild(routes.register)
+    } 
+  }else if (user){
+    main.innerHTML = "";
+    main.appendChild(routes[page]);
+  }
+});
+ 
 }
-
 const validateHash = (hash) => hash === "" ? "home" : hash.replace("#","")
 
 window.addEventListener("load", () => {
