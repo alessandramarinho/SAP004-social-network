@@ -2,6 +2,7 @@
 import { userLogin, loginGoogle } from './data.js';
 
 export const home = () => {
+  
   const container = document.createElement('div');
 
   container.innerHTML = `<div class='logo'><figure class="image">
@@ -9,11 +10,12 @@ export const home = () => {
 </figure></div>
   <div class='dcontainer-home'> 
   <ul class="list-home">
-  <li><input id="email" class="btn" placeholder='example@example.com' type='email'></li>
-  <li><input id="password" class="btn" placeholder='Digite sua senha' type='password'></li>
+  <li><input id="email" class="btn" placeholder=' example@example.com' type='email'></li>
+  <li><input id="password" class="btn" placeholder=' Digite sua senha' type='password'></li>
   <li><button id='login-btn' class='login-btn'>Login</button></li>
-  <li><button id='google-btn' class='img-google' >Google</button></li>
-  <li><p>Ainda não tem conta?<a href='#register'>Registre-se!</a></p></li>
+  <li><p>Ou entre com:</p></li>
+  <li><button id='google-btn' class='googleBtn'><img class='google' src='../../assets/004-brands-and-logotypes.png'></button></li>
+  <li><p>Ainda não tem conta?<a href='#register'> Registre-se!</a></p></li>
 </ul>
     </div>
   `;
@@ -38,4 +40,3 @@ export const home = () => {
 
   return container;
 };
-

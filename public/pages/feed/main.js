@@ -8,7 +8,7 @@ export const feed = () => {
     <label for="page-feed">
       <input id="post" class="btn" placeholder='O que você está pensando' type='text'>
     </label>
-      <button id='post-btn' class="feed-btn-postar">Postar</button>
+      <button id='post-btn' type='submit' class="feed-btn-postar">Postar</button>
       <button id='logout-btn' class="feed-btn-logout">Logout</button>
     </form>
 `;
@@ -21,6 +21,6 @@ export const feed = () => {
     logout();
   });
 
+
   return container;
 };
-
