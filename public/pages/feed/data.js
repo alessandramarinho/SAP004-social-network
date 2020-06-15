@@ -21,8 +21,9 @@ export const createPost = (text) => {
     email: email,
     likes: 0,
     comments: [],
-    date: new Date().toLocaleString('pt-BR')
+    date: new Date().toLocaleString('pt-BR'),
   }
+
   firebase.firestore()
     .collection('post').add(posts)
     .then(function (docRef) {

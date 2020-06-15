@@ -17,11 +17,6 @@ const init = () => {
   })
 }
 
-/* const renderPage = () => {
-  main.innerHTML = "";
-    const page = validateHash(window.location.hash)
-    main.appendChild(routes[page]);
-} */
 const renderPage = () => {
   const page = validateHash(window.location.hash)
   firebase.auth().onAuthStateChanged((user) => {

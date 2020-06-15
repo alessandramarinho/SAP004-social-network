@@ -20,13 +20,15 @@ export const register = () => {
       <button id='register-btn'>Cadastrar</button>
       <p>Já tem cadastro?Faça o <a href='#home'>login</a></p>
     </form>
+    <div class="cat-feed-img">
+    <div class="dog-search-img">
+    <div class="dog-hero-img">
   `;
 
   const email = container.querySelector('#email');
   const password = container.querySelector('#password');
   const registerBtn = container.querySelector('#register-btn');
   const name = container.querySelector('#name');
-
 
   registerBtn.addEventListener('click', (event) => {
     event.preventDefault();

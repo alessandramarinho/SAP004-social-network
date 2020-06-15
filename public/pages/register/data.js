@@ -1,8 +1,11 @@
-export const registerLogin = (email, password) => {
+export const registerLogin = (email, password, name) => {
     firebase.auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         window.location.hash = ('#feed');
+        firebase.auth().currentUser.updateProfile({
+          displayName: name
+      })
       })
       .catch(function (error) {
         // Handle Errors here.
