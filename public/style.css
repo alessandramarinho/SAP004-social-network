@@ -11,8 +11,13 @@ body {
   font-size: 12px;
   line-height: 14px;
 }
-li {
+
+.fundo{
+  background-image: url(assets/fundo3.png);  
+  background-size: repeat; 
 }
+
+
 .line-none{
   font-family: 'Pacifico', cursive;
   font-size: 14px;
@@ -30,8 +35,14 @@ li {
   top:15px;
 }
 .feed-btn-postar{
-  flex-wrap: wrap;
+display: flex;
+font-family: 'Pacifico', cursive;
+font-size: 10px;
+color: #e79a9a;
+
+border-style: double;
 }
+
 .navbar{
 width: 100vw;
 height: 56px;
@@ -49,17 +60,21 @@ height: 84px;
 margin-top: 56px;
 }
 .post {
+
 width: 80vw;
 height: 104px;
-top: 16px;
+margin: auto;
 background: rgba(141, 168, 186, 0.68);
 border-radius: 16px;
+border: none;
 display: flex;
-align-items: center;
-justify-content: center;
-flex-wrap: wrap;
+text-align: center;
+border: none;
+margin-top: 11px;
 }
+
 .postcont{
+  margin: auto;
   width: 90vw;
   display: flex;
   align-items: center;
@@ -71,15 +86,29 @@ flex-wrap: wrap;
   border: 1px solid #F2F2F2;
   box-sizing: border-box;
   border-radius: 21px;
+
 }
 .postedfeed{
-  width: 100vw;
-height: 40vh;
+width: 90vw;
+display: flex;
+margin: auto;
+margin-top: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
 flex-wrap: wrap;
+border: 1px solid #C4C4C4;
+border-radius: 21px;
+background: rgba(242, 242, 242, 0.54);
+height: 175px;
 }
+.posted-for{
+  font-family: 'Pacifico', cursive;
+}
+.likes-btn {
+border-style: none;
+}
+
 .dcontainer-home{
   width: 100vw;
   height: 0vh;
