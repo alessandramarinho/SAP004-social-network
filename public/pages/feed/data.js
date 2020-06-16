@@ -10,13 +10,14 @@ export const logout = () => {
     });
 }
 export const createPost = (text) => {
-  const name = firebase.auth().currentUser.displayName;
   const posts = {
     text: text,
-    user: name,
+    user: firebase.auth().currentUser.displayName,
+    userUid: firebase.auth().currentUser.uid,
     likes: 0,
     comments: [],
     date: new Date().toLocaleString('pt-BR'),
+    /* privacy: value, */
   };
   firebase.firestore()
     .collection('post').add(posts)
@@ -29,6 +30,7 @@ export const createPost = (text) => {
 }
 export const timeline = (callback) => {
   firebase.firestore().collection('post')
+ /*  .where('privacy', '==', 'public') */
     .orderBy('date', 'desc')
     .onSnapshot(function (querySnapshot) {
       const posts = [];
@@ -51,17 +53,13 @@ export const likePost = (id) => {
     likes: firebase.firestore.FieldValue.increment(1)
   });
 }
+
 export const saveEditedPost = (id, text) => {
-var edit = firebase.firestore().collection("post").doc(id);
-// Set the "capital" field of the city 'DC'
-return edit.update({
+return firebase.firestore().collection("post").doc(id).update({
     text: text.value,
-})
-.then(function() {
-    console.log("Document successfully updated!");
-})
-.catch(function(error) {
-    // The document probably doesn't exist.
-    console.error("Error updating document: ", error);
+    /* privacy: privacy.value, */
 })
 };
+
+
+

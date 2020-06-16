@@ -4,21 +4,27 @@ import { userLogin, loginGoogle } from './data.js';
 export const home = () => {
   const container = document.createElement('div');
 
-  container.innerHTML = `<div class='logo'><figure class='image'>
-  <img src='../../assets/logo-sos.png' class='img-logo'>
-</figure></div>
-  <div class='dcontainer-home'> 
-  <ul class='list-home'>
-  <li><input id='email' class='btn' placeholder=' example@example.com' type='email'></li>
-  <li><input id='password' class='btn' placeholder=' Digite sua senha' type='password'></li>
-  <li><button id='login-btn' class='login-btn'>Login</button></li>
-  <li><p>Ou entre com:</p></li>
-  <li><button id='google-btn' class='googleBtn'><img class='google' src='../../assets/004-brands-and-logotypes.png'></button></li>
-  <li><p>Ainda não tem conta?<a href='#register'> Registre-se!</a></p></li>
-</ul>
-    </div>
-  `;
+  container.innerHTML = `<div class='logo'>
+  <figure>
+    <img class='img-logo' src='../../assets/logo-sos.png' >
+  </figure>
+  </div>
+<div class='dcontainer-home'> 
+<form class='form-home'>
+  <label for='home-email' class='list-home'>
+    <input id='email' class='btn' placeholder=' example@example.com' type='email'>
+  </label>
+  <label for='home-password' class='list-home'>
+    <input id='password' class='btn' placeholder=' Digite sua senha' type='password'>
+  </label>
+  <button id='login-btn' class='login-btn'>Login</button>
+    <p class='line-none'>Ou entre com:</p>
+    <button id='google-btn' class='googleBtn'><img class='google' src='../../assets/004-brands-and-logotypes.png'></button>
+    <p class='line-none'>Ainda não tem conta?<a href='#register'> Registre-se!</a></p></li>
+  </form>
+  </div>`;
 
+  
   const email = container.querySelector('#email');
   const password = container.querySelector('#password');
   const loginBtn = container.querySelector('#login-btn');
