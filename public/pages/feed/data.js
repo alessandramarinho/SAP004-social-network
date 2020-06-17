@@ -9,15 +9,15 @@ export const logout = () => {
       // An error happened.
     });
 }
-export const createPost = (text) => {
+export const createPost = (text, privacy) => {
   const posts = {
-    text: text,
+    text,
     user: firebase.auth().currentUser.displayName,
     userUid: firebase.auth().currentUser.uid,
     likes: 0,
-    comments: [],
+    comments: 0,
     date: new Date().toLocaleString('pt-BR'),
-    /* privacy: value, */
+    privacy
   };
   firebase.firestore()
     .collection('post').add(posts)
@@ -30,12 +30,13 @@ export const createPost = (text) => {
 }
 export const timeline = (callback) => {
   firebase.firestore().collection('post')
- /*  .where('privacy', '==', 'public') */
     .orderBy('date', 'desc')
     .onSnapshot(function (querySnapshot) {
       const posts = [];
       querySnapshot.forEach(function (doc) {
-        posts.push({ id: doc.id, ...doc.data() });
+        if (doc.data().privacy === 'public' || doc.data().userUid === firebase.auth().currentUser.uid){ 
+        posts.push({ id: doc.id, userUid: doc.userUid, ...doc.data()})
+      };
       });
       callback(posts);
     });
@@ -54,12 +55,43 @@ export const likePost = (id) => {
   });
 }
 
-export const saveEditedPost = (id, text) => {
+export const saveEditedPost = (id, text /* privacy */) => {
 return firebase.firestore().collection("post").doc(id).update({
     text: text.value,
     /* privacy: privacy.value, */
 })
 };
+
+
+export const createComment = (text) => {
+  const comment = {
+    text: text,
+    user: firebase.auth().currentUser.displayName,
+    userUid: firebase.auth().currentUser.uid,
+    date: new Date().toLocaleString('pt-BR'),
+  };
+
+  firebase.firestore()
+    .collection('comments').add(comment)
+    .then(function (docRef) {
+      console.log('Document written with ID: ', docRef.id);
+    })
+    .catch(function (error) {
+      console.error('Error adding document: ', error);
+    });
+}
+
+export const loadComments = (callback) => {
+  firebase.firestore().collection('comments')
+    .orderBy('date', 'desc')
+    .onSnapshot(function (querySnapshot) {
+      const comment = [];
+      querySnapshot.forEach(function (doc) {
+        comment.push({ id: doc.id, userUid: doc.userUid, ...doc.data() });
+      });
+      callback(comment);
+    });
+}
 
 
 
