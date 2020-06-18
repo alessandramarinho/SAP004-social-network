@@ -17,7 +17,6 @@ export const userLogin = (email, password) => {
       // ...
     }); email - password.html;
 };
-
 export function loginGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');

@@ -8,13 +8,11 @@ body {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;  
+  font-size: 12px;
 }
-
 .fundo{
   background-image: url(assets/fundo.png);
 }
-
 .line-none{
   font-family: 'Pacifico', cursive;
   font-size: 14px;
@@ -32,6 +30,23 @@ body {
   top:15px;
   text-align: center;
 }
+.btn-privacy{
+  width: 17px;
+  height: 17px;
+}
+.bnt-space{
+  display: flex;
+  width: 90vw;
+}
+.comment-btn, .save, .likes-btn, .size{
+  width: 17px;
+  height: 17px;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 15px;
+}
 .feed-btn-postar{
   display: flex;
   font-family: 'Pacifico', cursive;
@@ -39,40 +54,40 @@ body {
   color: #E79A9A;
   border-style: double;
 }
-
 .navbar{
-width: 100vw;
-height: 56px;
-top: 0px;
-background: #B4DAD2;
-box-sizing: border-box;
-position: fixed;
-z-index: 10;
-display: flex;
-flex-wrap: wrap;
-
-
+  width: 100vw;
+  height: 56px;
+  top: 0px;
+  background: #B4DAD2;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
 }
 .profile{
-border: 1px solid black;
-width: 100vw;
-height: 84px;
-margin-top: 57px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 100vw;
+  height: 84px;
+  margin-top: 57px;
 }
 .post {
-
-width: 80vw;
-height: 104px;
-margin:auto;
-background: rgba(141, 168, 186, 0.68);
-border-radius: 16px;
-border:none;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top:11px;
+  width: 80vw;
+  height: 95px;
+  margin:auto;
+  background: rgba(141, 168, 186, 0.68);
+  border-radius: 16px;
+  border:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:11px;
+  text-align: center;
 }
-
 .postcont{
   margin: auto;
   width: 90vw;
@@ -86,7 +101,6 @@ margin-top:11px;
   border: 1px solid #F2F2F2;
   box-sizing: border-box;
   border-radius: 21px;
-
 }
 .postedfeed{
   width: 90vw;
@@ -99,9 +113,11 @@ margin-top:11px;
   border: 1px solid #C4C4C4;
   border-radius: 21px;
   background: rgba(242, 242, 242, 0.54);
-  height: 175px;
+  height: 150px;
 }
-
+.privacy{
+  display: grid;
+}
 .dcontainer-home{
   width: 100vw;
   height: 60vh;
@@ -162,7 +178,6 @@ margin-top:11px;
   margin-top: 15px;
   background: #F7FCFC;
 }
-
 .list{
   display: flex;
   align-items: center;
@@ -183,7 +198,7 @@ margin-top:11px;
 .img-nav{
   display: flex;
   width: 123px;
-    height: 65px;
+  height: 65px;
   margin: auto;
 }
 .feed-btn-logout{
@@ -204,7 +219,9 @@ height: 40px;
   background: none;
 }
 .posted-for{
-  font-family: 'Pacifico', cursive;
+  display: flex;
+  width: 80vw;
+  margin-bottom: -15px;
 }
 .likes-btn{
   border-style: none;

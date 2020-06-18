@@ -34,9 +34,9 @@ export const timeline = (callback) => {
     .onSnapshot(function (querySnapshot) {
       const posts = [];
       querySnapshot.forEach(function (doc) {
-        if (doc.data().privacy === 'public' || doc.data().userUid === firebase.auth().currentUser.uid){ 
-        posts.push({ id: doc.id, userUid: doc.userUid, ...doc.data()})
-      };
+        if (doc.data().privacy === 'public' || doc.data().userUid === firebase.auth().currentUser.uid) {
+          posts.push({ id: doc.id, userUid: doc.userUid, ...doc.data() })
+        };
       });
       callback(posts);
     });
@@ -54,15 +54,12 @@ export const likePost = (id) => {
     likes: firebase.firestore.FieldValue.increment(1)
   });
 }
-
 export const saveEditedPost = (id, text /* privacy */) => {
-return firebase.firestore().collection("post").doc(id).update({
+  return firebase.firestore().collection("post").doc(id).update({
     text: text.value,
     /* privacy: privacy.value, */
-})
+  })
 };
-
-
 export const createComment = (text) => {
   const comment = {
     text: text,
@@ -70,7 +67,6 @@ export const createComment = (text) => {
     userUid: firebase.auth().currentUser.uid,
     date: new Date().toLocaleString('pt-BR'),
   };
-
   firebase.firestore()
     .collection('comments').add(comment)
     .then(function (docRef) {
@@ -80,7 +76,6 @@ export const createComment = (text) => {
       console.error('Error adding document: ', error);
     });
 }
-
 export const loadComments = (callback) => {
   firebase.firestore().collection('comments')
     .orderBy('date', 'desc')

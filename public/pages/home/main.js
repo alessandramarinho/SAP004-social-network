@@ -3,7 +3,6 @@ import { userLogin, loginGoogle } from './data.js';
 
 export const home = () => {
   const container = document.createElement('div');
-
   container.innerHTML = `<div class='logo'>
   <figure>
     <img class='img-logo' src='../../assets/logo-sos.png' >
@@ -11,12 +10,12 @@ export const home = () => {
   </div>
 <div class='dcontainer-home'> 
 <form class='form-home'>
-  <label for='home-email' class='list-home'>
+  <fieldset class='list-home'>
     <input id='email' class='btn' placeholder=' example@example.com' type='email'>
-  </label>
-  <label for='home-password' class='list-home'>
+  </fieldset>
+  <fieldset class='list-home'>
     <input id='password' class='btn' placeholder=' Digite sua senha' type='password'>
-  </label>
+  </fieldset>
   <button id='login-btn' class='login-btn'>Login</button>
     <p class='line-none'>Ou entre com:</p>
     <button id='google-btn' class='googleBtn'><img class='google' src='../../assets/004-brands-and-logotypes.png'></button>
