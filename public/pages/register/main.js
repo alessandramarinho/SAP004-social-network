@@ -11,15 +11,15 @@ export const register = () => {
   </div>
   <div class='dcontainer-home2'>
     <form class='form-register'>
-      <label for='page-register' class='list'>
+      <fieldset class='list'>
         <input id='name' class='btn' placeholder='Nome' type='text'>
-      </label>
-      <label for='register-email' class='list'>
+      </fieldset>
+      <fieldset class='list'>
         <input id='email' class='btn' placeholder='example@example.com' type='email'>
-      </label>
-      <label for='register-password' class='list'>
+      </fieldset>
+      <fieldset class='list'>
         <input id='password' class='btn' placeholder='senha' type='password'>
-      </label>
+      </fieldset>
       <button id='register-btn' class='register-btn'>Cadastrar </button>
       <p class='line-none'>Já tem cadastro? Faça o <a href='#home'>Login</a></p>
     </form>

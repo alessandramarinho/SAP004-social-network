@@ -1,31 +1,25 @@
-import { logout, createPost, timeline, deletePost, likePost, saveEditedPost } from './data.js';
+import { logout, createPost, deletePost, likePost, saveEditedPost } from './data.js';
 export const feed = () => {
   const container = document.createElement('div');
-  container.innerHTML = container.innerHTML = ` <div class='fundo'>
-<div class='navbar'>
-  <button id='logout-btn' class='feed-btn-logout'>
-    <img class='exit' src='../../assets/exit.png'>
-  </button>
-<figure class='img-nav'>
-  <img class='img-nav' src='../../assets/logo-sos.png'>
-</figure> 
-</div>
-<section>
-<form id='form' class='postfeed'>
-  <h2 class='text-description-register' id='register'>Edite seu perfil!</h2>
-  <fieldset class='textarea-perfil'>
-    <input id='foto-perfil' type='file'>
+  container.innerHTML = `
+<div class='fundo'>
+  <div class='navbar'>
+    <button id='logout-btn' class='feed-btn-logout'>
+      <img class='exit' src='../../assets/exit.png'>
+    </button>
+  <figure class='img-nav'>
+    <img class='img-nav' src='../../assets/logo-sos.png'>
+  </figure> 
+  </div>
+  <section class ='profile'>
+  <form id='form' class='postfeed'>
     <div id='img-perfil'>
+      <input id='foto-perfil' type='file' class='textarea-perfil'>
     </div>
-  </fieldset>
-  <fieldset class='textarea-perfil'>
-    <input id='first-name' type='text' placeholder='Nome'>
-  </fieldset>
-  <fieldset class='textarea-perfil'>
-    <input id='last-name' type='text' placeholder='Sobrenome'>
-  </fieldset>
   <fieldset class="textarea-perfil">
-    <input id='location' type='text' placeholder='Localização'>
+    <input id='first-name' class='personal-info' type='text' placeholder='Nome'>
+    <input id='last-name' class='personal-info' type='text' placeholder='Sobrenome'>
+    <input id='location' class='personal-info' type='text' placeholder='Localização'>
     <img class='location-perfil' src=''>   
   </fieldset>
   <fieldset class='postcont'>
@@ -42,8 +36,6 @@ export const feed = () => {
 </section>
 <main id='all-posts'>
 </main>
-<footer>
-</footer>
 </div>
 `
   const logoutBtn = container.querySelector('#logout-btn');
@@ -79,36 +71,38 @@ export const feed = () => {
       <button id='delete-btn' class ='delet-btn'data-id= ${post.id}>
       <img class='close' src='../../assets/close.png'>
       </button>
-      <textarea id='text-area' data-id=${post.id} class='post' disabled>${post.text}</textarea>    
+      <textarea id='text-area' data-id=${post.id} class='post' disabled>${post.text}
+      </textarea>    
       <div class='bnt-space'>
-        <button id='comment-btn' class ='comment-btn' data-id= ${post.id}>
-        <img class='likes size' src='../../assets/comment.png' width='20'>
-        </button> <br>
-        <button id='edit-btn' class='edit size' data-id= ${post.id}>
-        <img class='save size' src='../../assets/edit.png'></button>
-        <button id='save-btn' class='save size' data-id= ${post.id}>
-        <img class='save size' src='../../assets/tick.png'>
-        </button>
         <button id='like-btn' class='likes-btn size' data-id= ${post.id}>
         <img class='likes size' src='../../assets/001-paw.png' width='20'>${post.likes}
         </button>
+        <button id='comment-btn' class ='comment-btn' data-id= ${post.id}>
+        <img class='likes size' src='../../assets/comment.png' width='20'>
+        </button>
+        <button id='edit-btn' class='edit size' data-id= ${post.id}>
+        <img class='save size' src='../../assets/edit.png'>
+        </button>
+        <button id='save-btn' class='save size' data-id= ${post.id}>
+        <img class='save size' src='../../assets/tick.png'>
+        </button>
       </div>
-      <div class='comments-area' id='all-comments' style="display: none;">
+      <div class='comments-area' id='all-comments' style='display: none;'>
         <textarea>olar</textarea>
       </div>
       </div>`
-
       allPosts.appendChild(template);
       const commentBtn = template.querySelector('#comment-btn');
+      const privacyForm = template.querySelector ('#privacy')
       commentBtn.addEventListener('click', () => {
         template.querySelector('.comments-area').style.display = 'flex';
       })
-      const likeBtn = template.querySelector("#like-btn");
+      const likeBtn = template.querySelector('#like-btn');
       const deleteBtn = template.querySelector('#delete-btn');
-      const editBtn = template.querySelector("#edit-btn");
+      const editBtn = template.querySelector('#edit-btn');
       const saveBtn = template.querySelector('#save-btn');
-      const privacyBtn = template.querySelector('#privacy')
-      const datePost = template.querySelector('#datePost')
+      const privacyBtn = template.querySelector('#privacy');
+      const datePost = template.querySelector('#datePost');
       saveBtn.style.display = 'none';
       privacyBtn.style.display = 'none';
       if (post.userUid === firebase.auth().currentUser.uid) {
@@ -132,7 +126,7 @@ export const feed = () => {
           event.preventDefault();
           const textArea = template.querySelector('#text-area');
           textArea.disabled = true;
-          saveEditedPost(saveBtn.dataset.id, textArea)
+          saveEditedPost(saveBtn.dataset.id, textArea, privacyForm.privacy)
         })
       } else {
         editBtn.style.display = 'none';
