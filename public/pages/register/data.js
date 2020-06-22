@@ -1,18 +1,18 @@
-export const registerLogin = (email, password, name) => {
+export const registerLogin = (email, password, name, location) => {
   firebase.auth()
     .createUserWithEmailAndPassword(email, password)
+    .then(cred => cred.user.updateProfile({ displayName: name }))
     .then(() => {
       window.location.hash = ('#feed');
-      firebase.auth().currentUser.updateProfile({
-        displayName: name,
-      });
+      const uid = firebase.auth().currentUser.uid;
+      const user = {
+        location: location,
+        emailUser: email,
+        user_uid: firebase.auth().currentUser.uid,
+        name: name,
+      };
+      firebase.firestore().collection('users').doc(uid).set(user);
     })
-    .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-      // ...
-    }); email - password.html;
+    .catch(() => {
+    });
 };

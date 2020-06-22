@@ -9,22 +9,27 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  background-image: url(assets/fundo.png)
-  
 }
-.main-div {
-  height: 100vh;
-  width: 100vw;
+input, button{
+  outline: none;
 }
-.main-divFeed{
-  height: 100vh;
-  width: 100vw;
-  /* background-image: url(assets/fundo.png) */
+
+.main-feed{
+  background-image: url(assets/fundo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.fundo{
+  background-image: url(assets/fundo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .line-none{
   font-family: 'Pacifico', cursive;
   font-size: 14px;
-  margin-top: 37px;
+  margin-top: 18px;
 }
 .line-none a:link{
   outline: none;
@@ -45,22 +50,21 @@ body {
 .bnt-space{
   display: flex;
   width: 90vw;
+  justify-content: space-around;
 }
 .comment-btn, .save, .likes-btn, .size{
-  width: 17px;
-  height: 17px;
+  width: 21px;
+  height: 21px;
   border: none;
   background: none;
   display: flex;
-  justify-content: space-around;
   margin-left: 15px;
 }
 .feed-btn-postar{
   display: flex;
-  font-family: 'Pacifico', cursive;
-  font-size: 10px;
-  color: #E79A9A;
-  border-style: double;
+  padding: 5px;
+  margin: 2% 30%;
+  border-radius: 10px;
 }
 .navbar{
   width: 100vw;
@@ -72,8 +76,6 @@ body {
   z-index: 10;
   display: flex;
   flex-wrap: wrap;
-
-
 }
 .profile{
   display: flex;
@@ -83,6 +85,12 @@ body {
   margin-top: 56px;  
   width: 100vw;  
   margin-top: 56px;
+}
+.img-perfil > img {
+  width: 60px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: left;
 }
 .post {
   width: 80vw;
@@ -101,11 +109,9 @@ body {
   margin: auto;
   width: 90vw;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: -webkit-center;
   flex-wrap: wrap;
   height: 155px;
-  top: 140px;
   background: rgba(242, 242, 242, 0.54);
   border: 1px solid #F2F2F2;
   box-sizing: border-box;
@@ -125,8 +131,23 @@ body {
   background: rgba(242, 242, 242, 0.54);
   height: 150px;
 }
-.privacy{
-  display: grid;
+.form-privacy{
+  display:flex;
+  justify-content: center;
+}
+.commented{
+  margin: 50px;
+  text-align: center;
+  border: solid 1px rgb(173, 171, 171);
+  background-color: whitesmoke;
+  border-radius: 50px;
+}
+.commented2 {
+  margin: 50px;
+  text-align: center;
+  border: none;
+  background-color: rgba(245, 245, 245, 0.637);
+  border-radius: 50px;
 }
 .dcontainer-home{
   width: 100vw;
@@ -144,19 +165,17 @@ body {
   justify-content: center;
   background: #F7FCFC;
 }
-
+.dcontainer-home2{
+  flex-wrap: wrap;
+  top:15px;
+  height: 60vh;
+  text-align: center;
+}
 .img-logo{
   display: flex;
   justify-content: center;
   width: 277px;
   align-items: center;
-  margin-top: 55px;
-}
-.dcontainer-home2{
-  flex-wrap: wrap;
-  top:15px;
-  height: 50vh;
-  text-align: center;
 }
 .logo{
   height: 40vh;
@@ -173,40 +192,37 @@ body {
   margin-top: 20px
 }
 .login-btn, .register-btn{
-  list-style-type: none;
   width: 108px;
   height: 26px;
   background: #D0D6C1;
   border-radius: 18px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 16px;
 }
-
 .googleBtn, .google{
   cursor: pointer;
   width: 40px;
   border-radius: 100px; 
   border: none;
-  margin-top: 15px;
+  margin-top: 11px;
   background: #F7FCFC;
 }
-
 .list{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20px
-  ;
+  margin-top: 20px;
+  border:none;
 }
 .logout-btn{
   align-items: center;    
-    display: flex;
-    font-style: normal;    
-    font-weight: 700;
-    justify-content: flex-start;
-    width: 35px;
-    height: 26px;
+  display: flex;
+  font-style: normal;    
+  font-weight: 700;
+  justify-content: flex-start;
+  width: 35px;
+  height: 26px;
 }
 .img-nav{
   display: flex;
@@ -224,9 +240,10 @@ body {
 }
 .exit{
   width: 40px;
-height: 40px;
+  height: 40px;
 }
-.close, .delet-btn{width: 12px;
+.close, .delet-btn{
+  width: 12px;
   height: 10px;
   border: none;
   background: none;
@@ -244,13 +261,33 @@ height: 40px;
   display: flex;
   background: none;
   border:none;
+  font-size: 36px;
+  font-family: pacifico;
+  height: 7vh;
 }
 .personal-info{
+  border: none;
+  background: none;
+  font-size: 36px;
+  font-family: pacifico;
+}
+.img-pets{
+  display: none;
+  width: 393px;
+  height: 197px;
+}
+.textarea-location{
+  display: flex;
+  font-size: 19px;
+  font-family: pacifico;
   border: none;
   background: none;
 }
 @media(min-width:1200px){
   .main-div{
+    display: flex;
+  }
+  .main-divFeed{
     display: flex;
   }
   .logo{
@@ -261,7 +298,7 @@ height: 40px;
     justify-content: center;
     align-items: center;
   }
-  .dcontainer-home{
+  .dcontainer-home, .dcontainer-home2{
     width: 50vw;
     height: 100vh;
     text-align: center;
@@ -269,5 +306,111 @@ height: 40px;
     align-items: center;
     justify-content: center;
     background: #F7FCFC;
+  }
+  .dcontainer-home2{
+    width: 50vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F7FCFC;
+  }
+  .img-pets{
+    display: flex;
+    width: 393px;
+    height: 215px;
+  }
+  .img-logo { 
+    width: 625px;
+    height: 410px;
+    margin-top: 0;
+  }
+  .fundo{
+    display: flex;
+  }
+  .feed{
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+    margin-top:80px;
+  }
+  .post{
+    width: 35vw;
+  }
+  .posted-for{
+    margin-left: 63px;
+    font-size: 15px;
+  }
+  .postcont{
+    display: block;
+    width: 40vw;
+  }
+  .postedfeed{
+    width: 42vw;
+  }
+  .all-posts{
+    display: flex
+  }
+  .profile{
+    width: 50vw;
+    display: block;
+  }
+  .privacy{
+    display: flex;
+    justify-content: center;
+  }
+  .personal-info{
+    display: flex;
+  }
+  .textarea-location{
+    display: flex;
+    font-size: 19px;
+    font-family: pacifico;
+    border: none;
+    background: none;
+  }
+  .comment-area{
+    display: flex;
+    text-align: center;
+    width: 16vw;
+    margin: auto;
+    border: none;
+    background: whitesmoke;
+  }
+  .commented2
+  {    
+    margin: auto;
+    width: 35vw;
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.637);
+    border-radius: 15px;
+  }
+  .btn-comment{
+    display: flex;
+    margin-right: 20px;
+  }
+  .commented{
+    display: flex;
+    margin: 23px;    
+    border: solid 1px rgb(173, 171, 171);
+    background-color: whitesmoke;
+    border-radius: 50px;
+    align-items: center;
+  }
+  .close, .delet-btn{
+    width: 12px;
+    border: none;
+    background: none;
+    align-items: center;
+    margin-left: 5px;
+  }
+  .bnt-spaceProfile{
+    display: flex;
+    width: 5vw;
+    justify-content: space-around;
+  }
+  .exit{
+    width: 60px;
   }
 }

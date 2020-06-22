@@ -17,14 +17,27 @@ export const userLogin = (email, password) => {
       // ...
     }); email - password.html;
 };
-export function loginGoogle() {
+
+export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-  firebase.auth()
-    .signInWithPopup(provider)
-    .then(function (result) {
-      const name = firebase.auth().currentUser.displayName;
-      alert(`Olá, ${name}!`);
-      window.location.hash = '#feed';
-    })
-}
+  firebase.auth().signInWithPopup(provider).then((currentUser) => {
+    firebase.firestore()
+      .collection('users')
+      .where('user_uid', '==', currentUser.user.uid)
+      .get()
+      .then((snap) => {
+        if (snap.size === 0) {
+          const user = {
+            name: currentUser.additionalUserInfo.profile.given_name,
+            emailUser: currentUser.additionalUserInfo.profile.email,
+            photoURL: currentUser.additionalUserInfo.profile.picture,
+            user_uid: currentUser.user.uid,
+          };
+          firebase.firestore().collection('users').add(user);
+          window.location = '#feed';
+        } else {
+          window.location = '#feed';
+        }
+      });
+  });
+};
