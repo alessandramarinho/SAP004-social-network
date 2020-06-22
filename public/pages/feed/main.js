@@ -1,6 +1,7 @@
-import { logout, createPost, deletePost, likePost, saveEditedPost } from './data.js';
+import { logout, createPost,timeline, deletePost, likePost, saveEditedPost, } from './data.js';
 export const feed = () => {
   const container = document.createElement('div');
+  container.classList.add('main-divFeed')
   container.innerHTML = `
 <div class='fundo'>
   <div class='navbar'>
