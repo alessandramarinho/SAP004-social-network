@@ -13,6 +13,9 @@ body {
 input, button{
   outline: none;
 }
+fieldset{
+  border: none;
+}
 
 .main-feed{
   background-image: url(assets/fundo.png);
@@ -84,13 +87,12 @@ input, button{
   align-items: center;
   margin-top: 56px;  
   width: 100vw;  
-  margin-top: 56px;
+ 
 }
 .img-perfil > img {
-  width: 60px;
+  width: 70px;
   border-radius: 100px;
   display: flex;
-  justify-content: left;
 }
 .post {
   width: 80vw;
@@ -257,19 +259,26 @@ input, button{
   border-style: none;
   background: none;
 }
-.textarea-perfil{
+/* .textarea-perfil{
   display: flex;
+  width: 90vw;
   background: none;
   border:none;
-  font-size: 36px;
-  font-family: pacifico;
-  height: 7vh;
-}
+  font-size: 16px;
+  font-family: pacifico; 
+  
+} */
 .personal-info{
   border: none;
   background: none;
-  font-size: 36px;
+  font-size: 20px;
   font-family: pacifico;
+  display: flex;
+  width: 90VW;
+  background: none;
+  border: none;
+  font-family: pacifico;
+  height: 7vh;
 }
 .img-pets{
   display: none;
@@ -278,10 +287,48 @@ input, button{
 }
 .textarea-location{
   display: flex;
-  font-size: 19px;
+  width: 90VW;
+  height: 7vh;
+  background: none;
+  border: none;
   font-family: pacifico;
+}
+.edit-profile{width: 21px;
+  height: 21px;
   border: none;
   background: none;
+  display: flex;
+ }
+ .bnt-spaceProfile{
+  display: flex;
+  width: 5vw;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.privacy{
+  display: flex;
+  justify-content: center;}
+.nput[type='file'] {
+  display: none
+  }
+.btn-profile{
+  background-color: #1DC2AC;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 6px 10px;
+  width: 83px;
+  font-family: roboto;
+  font-size: 13px;
+}
+.comment-area{
+  display: flex;
+  text-align: center;
+  width: 16vw;
+  margin: auto;
+  border: none;
+  background: whitesmoke;
 }
 @media(min-width:1200px){
   .main-div{
@@ -362,13 +409,12 @@ input, button{
   }
   .personal-info{
     display: flex;
+    font-size: 35px;
   }
   .textarea-location{
-    display: flex;
-    font-size: 19px;
-    font-family: pacifico;
-    border: none;
-    background: none;
+    
+    font-size: 25px;
+    
   }
   .comment-area{
     display: flex;
@@ -413,4 +459,13 @@ input, button{
   .exit{
     width: 60px;
   }
+  .pin{
+    width: 25px;
+    height: 33px;
+  }
+  .img-perfil > img {
+    width: 17vw;
+  }
 }
+
+
