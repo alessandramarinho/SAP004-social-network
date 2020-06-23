@@ -1,4 +1,4 @@
-/ Este é o ponto de entrada de sua aplicação
+//Este é o ponto de entrada de sua aplicação
 import { home } from './pages/home/main.js';
 import { register } from './pages/register/main.js';
 import { feed } from './pages/feed/main.js';

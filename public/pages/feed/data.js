@@ -13,7 +13,7 @@ export const printUser = (callback) => {
       
       querySnapshot.forEach(function (doc) {
         if (firebase.auth().currentUser.uid === doc.data().user_uid){
-        callback({ id: doc.id, userUid: doc.userUid, ...doc.data() })
+        callback({ id: doc.id, user_uid: doc.user_uid, ...doc.data() })
       }
       });
     });
@@ -43,36 +43,23 @@ ref.put(arquivo).then(function(snapshot){
     });
 };
 
-
-/* export function printImg(event, func, divImg) {
-  let arquivo = event.target.files[0];
-  var ref = firebase.storage().ref('arquivo')
-  ref.child('arquivo' + arquivo.name).put(arquivo).then(snapshot => {
-    ref.child('arquivo' + arquivo.name).getDownloadURL().then(url => {
-      func(divImg, url)
-    })
-  })
-} */
-
-export const createImage = (photo, id) => {
+export const createImage = (image, id) => {
   const photoUser = {
-    photo,
-    userUid: firebase.auth().currentUser.uid,
+    image,
   };
-
   firebase.firestore()
-    .collection('users').doc(id).collection('photos').doc().set(photoUser)
+    .collection('post').doc(id).collection('images').doc().set(photoUser)
     .then(function () {
     })
     .catch(function (error) {
-
     });
 }
 export const createPost = (text, privacy) => {
+  
   const posts = {
     text,
     user: firebase.auth().currentUser.displayName,
-    userUid: firebase.auth().currentUser.uid,
+    user_uid: firebase.auth().currentUser.uid,
     likes: 0,
     comments: 0,
     date: new Date().toLocaleString('pt-BR'),
@@ -93,11 +80,13 @@ export const timeline = (callback) => {
     .onSnapshot(function (querySnapshot) {
       const posts = [];
       querySnapshot.forEach(function (doc) {
-        if (doc.data().privacy === 'public' || doc.data().userUid === firebase.auth().currentUser.uid) {
-          posts.push({ id: doc.id, userUid: doc.userUid, ...doc.data() })
+        if (doc.data().privacy === 'public' || doc.data().user_uid === firebase.auth().currentUser.uid) {
+          posts.push({ id: doc.id, user_uid: doc.user_uid, ...doc.data() })
         };
+      
       });
       callback(posts);
+      
     });
 }
 export const deletePost = (id) => {
@@ -111,7 +100,7 @@ export const likePost = (id) => {
   let likesPost = firebase.firestore().collection('post').doc(id);
   likesPost.update({
     likes: firebase.firestore.FieldValue.increment(1)
-  });
+})
 }
 export const saveEditedPost = (id, text, privacy) => {
   return firebase.firestore().collection("post").doc(id).update({
@@ -124,7 +113,7 @@ export const createComment = (text, id) => {
   const comment = {
     text,
     user: firebase.auth().currentUser.displayName,
-    userUid: firebase.auth().currentUser.uid,
+    user_uid: firebase.auth().currentUser.uid,
     date: new Date().toLocaleString('pt-BR'),
   };
 
@@ -145,7 +134,7 @@ export const readComment = (id, callback) => {
       const comment = [];
 
       querySnapshot.forEach(function (doc) {
-        comment.push({ id: doc.id, userUid: doc.userUid, ...doc.data() })
+        comment.push({ id: doc.id, user_uid: doc.user_uid, ...doc.data() })
 
       });
       callback(comment);

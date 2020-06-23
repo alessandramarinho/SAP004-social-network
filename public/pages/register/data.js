@@ -1,7 +1,7 @@
 export const registerLogin = (email, password, name, location) => {
   firebase.auth()
     .createUserWithEmailAndPassword(email, password)
-    .then(cred => cred.user.updateProfile({ displayName: name }))
+    .then( ()=> firebase.auth().currentUser.updateProfile({ displayName: name }))
     .then(() => {
       window.location.hash = ('#feed');
       const uid = firebase.auth().currentUser.uid;

@@ -23,12 +23,6 @@ fieldset{
   background-size: cover;
   background-attachment: fixed;
 }
-.fundo{
-  background-image: url(assets/fundo.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
 .line-none{
   font-family: 'Pacifico', cursive;
   font-size: 14px;
@@ -87,10 +81,10 @@ fieldset{
   align-items: center;
   margin-top: 56px;  
   width: 100vw;  
- 
+
 }
 .img-perfil > img {
-  width: 70px;
+  width: 23vw;
   border-radius: 100px;
   display: flex;
 }
@@ -138,7 +132,7 @@ fieldset{
   justify-content: center;
 }
 .commented{
-  margin: 50px;
+  margin: 15px;
   text-align: center;
   border: solid 1px rgb(173, 171, 171);
   background-color: whitesmoke;
@@ -259,15 +253,14 @@ fieldset{
   border-style: none;
   background: none;
 }
-/* .textarea-perfil{
+.textarea-info{
   display: flex;
-  width: 90vw;
   background: none;
   border:none;
-  font-size: 16px;
+  font-size: 36px;
   font-family: pacifico; 
-  
-} */
+
+} 
 .personal-info{
   border: none;
   background: none;
@@ -298,8 +291,8 @@ fieldset{
   border: none;
   background: none;
   display: flex;
- }
- .bnt-spaceProfile{
+}
+.bnt-spaceProfile{
   display: flex;
   width: 5vw;
   justify-content: space-around;
@@ -307,16 +300,17 @@ fieldset{
 }
 .privacy{
   display: flex;
-  justify-content: center;}
-.nput[type='file'] {
+  justify-content: center;
+}
+input[type='file'] {
   display: none
-  }
+}
 .btn-profile{
   background-color: #1DC2AC;
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
-  margin: 10px;
+  margin-top: 5px;
   padding: 6px 10px;
   width: 83px;
   font-family: roboto;
@@ -329,6 +323,13 @@ fieldset{
   margin: auto;
   border: none;
   background: whitesmoke;
+}
+.btn-comment{
+  display: flex;
+  margin-right: 20px;
+}
+.post-comment{
+  width:55vw ;
 }
 @media(min-width:1200px){
   .main-div{

@@ -5,6 +5,7 @@ import {
 
 export const feed = () => {
   const container = document.createElement('div');
+  document.body.className = 'main-feed';
   container.classList.add('main-feed')
   container.innerHTML = ` 
   <div class='fundo'>
@@ -48,29 +49,35 @@ export const feed = () => {
     profile.innerHTML = '';
       const userProfile = document.createElement('div');
       userProfile.innerHTML = `
-    <fieldset class=''>   
-    <div class='img-perfil'>
-    <img id='img-perfil' data-id=${user.id} src=${user.photoURL}>
-    <div class='btn-profile'><strong>Editar Foto</strong></div>
-    <input id='foto-perfil' type='file'>
-    </div>
-  </fieldset>
-  <fieldset class='textarea-perfil'>
-  <div class='personal-info'>Nome: <textarea id='first-name' class='personal-info' data-id= ${user.id} type='text' disabled>${user.name}</textarea></div>
-  </fieldset>
-  <fieldset class=''>
-  <div class='textarea-location'>Localização: <img class='size pin' src='../../assets/pin.png'>
-  <textarea id='location' class='textarea-location' type='text' data-id=${user.id} disabled>${user.location}</textarea></div>  
-  </fieldset>
-  <div class='bnt-spaceProfile'>
-    <button id='edit-btn' class='edit-profile' data-id= ${user.id}>
-      <img class='edit-profile' src='../../assets/edit.png'>
-    </button>
-    <button id='save-btn' class='edit-profile' data-id= ${user.id}>
-      <img class='edit-profile' src='../../assets/tick.png'>
-    </button>
-  </div>
-  `
+      <div class='img-perfil'>
+        <figure> 
+          <img id='img-perfil' data-id=${user.id} src=${user.photoURL}>
+        </figure>      
+          <textarea id='first-name' class='personal-info' data-id= ${user.id} type='text' disabled>${user.name}</textarea>
+          <textarea id='location' class='textarea-location' type='text' data-id=${user.id} disabled>${user.location}</textarea> 
+        </div>
+      </div>
+      <div class='btn-profile'><strong>Editar Foto</strong>
+        <input id='foto-perfil' type='file'>
+      </div> 
+      <fieldset class='textarea-info'>
+        <div class='personal-info'>
+        </div>
+      </fieldset>
+      <fieldset>
+      <div class='textarea-location'>
+        <img class='size pin' src='../../assets/pin.png'>
+      </div>  
+      </fieldset>
+      <div class='bnt-spaceProfile'>
+        <button id='edit-btn' class='edit-profile' data-id= ${user.id}>
+          <img class='edit-profile' src='../../assets/edit.png'>
+        </button>
+        <button id='save-btn' class='edit-profile' data-id= ${user.id}>
+          <img class='edit-profile' src='../../assets/tick.png'>
+        </button>
+      </div>
+    `
       profile.appendChild(userProfile)
 
       const textName = userProfile.querySelector('#first-name');
@@ -135,7 +142,7 @@ export const feed = () => {
     <textarea id='text-area' data-id=${post.id} class='post' disabled>${post.text}</textarea> 
     <div class='bnt-space'>
     <button id='like-btn' class='likes-btn size' data-id= ${post.id}>
-    <img class='likes size' src='../../assets/001-paw.png' width='20'>${post.likes}</button>'
+    <img class='likes size' src='../../assets/001-paw.png' width='20'>${post.likes}</button>
     <button id='comment-btn' class ='comment-btn' data-id= ${post.id}><img class='likes size' src='../../assets/comment.png' width='20'></button> <br>
     <button id='edit-btn' class='edit size' data-id= ${post.id}><img class='save size' src='../../assets/edit.png'></button>
     <button id='save-btn' class='save size' data-id= ${post.id}><img class='save size' src='../../assets/tick.png'></button>
@@ -208,7 +215,7 @@ export const feed = () => {
         <div class='commented'>
         <button id='delete-comment' class ='delet-btn'data-id= ${comment.id}><img class='close' src='../../assets/close.png'></button>
         <p>${comment.user}, em ${comment.date}</p>
-        <textarea id='text-area' class='comment-area' data-id=${comment.id} disabled>${comment.text}</textarea>
+        <textarea id='text-area' class='comment-area post-comment' data-id=${comment.id} disabled>${comment.text}</textarea>
         <div class='btn-comment'>
         <button id='edit-comment' class='edit size' data-id= ${comment.id}><img class='save size' src='../../assets/edit.png'></button>
       <button id='save-comment' class='save size' data-id= ${comment.id}><img class='save size' src='../../assets/tick.png'></button>
