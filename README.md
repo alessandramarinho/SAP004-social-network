@@ -35,7 +35,7 @@ Por meio da ferramenta *Figma*, elaboramos nosso protótipo no modelo *mobile fi
 
 ### Paleta de Cores
 Esta foi a paleta de cores escolhida para utilizar na nossa aplicação.
-![Paleta de Cores]() 
+![Paleta de Cores](public/pictures/paleta-de-cores.jpeg) 
 
 ### Logotipo
 Este foi o logotipo criado com o nome da Rede Social.
