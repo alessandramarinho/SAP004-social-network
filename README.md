@@ -40,7 +40,7 @@ Esta foi a paleta de cores escolhida para utilizar na nossa aplicação.
 ### Logotipo
 Este foi o logotipo criado com o nome da Rede Social.
 
-![Logo](public/pictures/sos_pets.png) 
+![Logo](public/pictures/logo_sos_pets.png) 
 
 ## 5. Desenvolvimento Front-end
 
