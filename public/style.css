@@ -10,19 +10,24 @@ body {
   font-weight: normal;
   font-size: 12px;
 }
-input, button{
+input, button, textarea{
   outline: none;
+  resize: none;
 }
 fieldset{
   border: none;
 }
-
+button{
+  box-shadow: none;
+  cursor: pointer;
+}
 .main-feed{
   background-image: url(assets/fundo.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-}
+  height:100vh;
+} 
 .line-none{
   font-family: 'Pacifico', cursive;
   font-size: 14px;
@@ -48,6 +53,7 @@ fieldset{
   display: flex;
   width: 90vw;
   justify-content: space-around;
+  border-top: solid 1px gray;
 }
 .comment-btn, .save, .likes-btn, .size{
   width: 21px;
@@ -81,25 +87,37 @@ fieldset{
   align-items: center;
   margin-top: 56px;  
   width: 100vw;  
-
 }
-.img-perfil > img {
-  width: 23vw;
+.profileBox{
+  background-color:#00c3ac25;
+  border: solid 1px rgba(105, 105, 105, 0.904);;
+  width: 100vw;
+}
+.img-perfil {
+  display: flex;
+  width: 100vw;
   border-radius: 100px;
   display: flex;
 }
+.pic-profile{
+  height: 70px;
+  width: 70px;
+  border-radius: 100px;
+  object-fit: cover;
+  object-position: center;
+  margin-left: 7px;
+  margin-top: 2px;
+}
 .post {
-  width: 80vw;
-  height: 95px;
+  width: 90vw;
+  height: 100px;
   margin:auto;
-  background: rgba(141, 168, 186, 0.68);
-  border-radius: 16px;
   border:none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top:11px;
+  justify-content: center;  
   text-align: center;
+  border-radius: 0px;
 }
 .postcont{
   margin: auto;
@@ -110,8 +128,7 @@ fieldset{
   height: 155px;
   background: rgba(242, 242, 242, 0.54);
   border: 1px solid #F2F2F2;
-  box-sizing: border-box;
-  border-radius: 21px;
+  box-sizing: border-box;  
   margin-top: 10px;
 }
 .postedfeed{
@@ -123,9 +140,9 @@ fieldset{
   flex-wrap: wrap;
   margin-top: 20px;
   border: 1px solid #C4C4C4;
-  border-radius: 21px;
   background: rgba(242, 242, 242, 0.54);
   height: 150px;
+  margin-bottom: 34px;  
 }
 .form-privacy{
   display:flex;
@@ -136,14 +153,17 @@ fieldset{
   text-align: center;
   border: solid 1px rgb(173, 171, 171);
   background-color: whitesmoke;
-  border-radius: 50px;
+  margin-top: 24px;
 }
-.commented2 {
-  margin: 50px;
+.commented2{
   text-align: center;
   border: none;
   background-color: rgba(245, 245, 245, 0.637);
-  border-radius: 50px;
+  margin-top: 48px
+}
+.commentedInfo{
+  display: flex;
+  justify-content: space-between;
 }
 .dcontainer-home{
   width: 100vw;
@@ -248,6 +268,7 @@ fieldset{
   display: flex;
   width: 80vw;
   margin-bottom: -15px;
+  margin: auto;
 }
 .likes-btn{
   border-style: none;
@@ -258,51 +279,67 @@ fieldset{
   background: none;
   border:none;
   font-size: 36px;
-  font-family: pacifico; 
-
+  font-family: pacifico;  
 } 
 .personal-info{
   border: none;
   background: none;
-  font-size: 20px;
+  font-size: 21px;
   font-family: pacifico;
   display: flex;
-  width: 90VW;
+  width: 61VW;
   background: none;
   border: none;
   font-family: pacifico;
   height: 7vh;
-}
+  text-align: center;
+} 
 .img-pets{
   display: none;
   width: 393px;
   height: 197px;
 }
+.pin{
+  width: 23px;
+  height: 23px;
+  border: none;
+  background: none;
+  display: flex;
+}
 .textarea-location{
   display: flex;
-  width: 90VW;
+  width: 62VW;
   height: 7vh;
   background: none;
   border: none;
   font-family: pacifico;
+  text-align: initial;
+  margin-left: 7px;
 }
-.edit-profile{width: 21px;
+.edit-profile{
+  width: 21px;
   height: 21px;
   border: none;
   background: none;
   display: flex;
+  margin-left: 47px;
+}
+.edit-btn{
+  display: flex;
+  border-top: solid 1px dimgray;
 }
 .bnt-spaceProfile{
   display: flex;
-  width: 5vw;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  width: 67vw;
+  justify-content: end;
+  height: 4vh;
 }
 .privacy{
   display: flex;
   justify-content: center;
+  margin-top: 02px;
 }
-input[type='file'] {
+input[type='file']{
   display: none
 }
 .btn-profile{
@@ -310,11 +347,11 @@ input[type='file'] {
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
-  margin-top: 5px;
-  padding: 6px 10px;
   width: 83px;
   font-family: roboto;
   font-size: 13px;
+  margin-left: 21px;
+  height: 20px;
 }
 .comment-area{
   display: flex;
@@ -327,16 +364,37 @@ input[type='file'] {
 .btn-comment{
   display: flex;
   margin-right: 20px;
+  justify-content: flex-end;
 }
 .post-comment{
-  width:55vw ;
+  width:55vw;
 }
-@media(min-width:1200px){
+.comment-input{ 
+  box-shadow: none;
+}
+.commentBtn{
+  border-radius: 5px;
+  box-shadow: none;
+  height: 26px;
+  margin-left: 2px;
+}
+.userPost{
+  border: solid 1px gainsboro;
+  background-color:#00C3AC;
+  display: flex;
+  display: flex;
+  width: 90vw;
+  height: 29px;
+}
+  @media(min-width:800px){
   .main-div{
     display: flex;
   }
   .main-divFeed{
     display: flex;
+  }
+  .comment-input{
+    width: 320px;
   }
   .logo{
     height: 100vh;
@@ -369,7 +427,7 @@ input[type='file'] {
     width: 393px;
     height: 215px;
   }
-  .img-logo { 
+  .img-logo{ 
     width: 625px;
     height: 410px;
     margin-top: 0;
@@ -394,7 +452,7 @@ input[type='file'] {
     display: block;
     width: 40vw;
   }
-  .postedfeed{
+  .postedfeed, .userPost{
     width: 42vw;
   }
   .all-posts{
@@ -410,39 +468,44 @@ input[type='file'] {
   }
   .personal-info{
     display: flex;
-    font-size: 35px;
+    font-size: 34px;
+    width: 25vw;
+    height: 80px;
+    text-align: center;
+    margin-top: 30px;
   }
   .textarea-location{
-    
-    font-size: 25px;
-    
+    font-size: 20px;
+    height: 71px;
+    width: 400px;
+    text-align: initial;
   }
   .comment-area{
     display: flex;
     text-align: center;
-    width: 16vw;
+    height: 64px;
+    width: 330px;
+    border-radius: 10px;
     margin: auto;
     border: none;
     background: whitesmoke;
   }
-  .commented2
-  {    
-    margin: auto;
+  .commented2{    
+    margin: 50px;
     width: 35vw;
     text-align: center;
     background-color: rgba(245, 245, 245, 0.637);
-    border-radius: 15px;
+    margin-top: 43px;
+    
   }
   .btn-comment{
     display: flex;
     margin-right: 20px;
   }
-  .commented{
-    display: flex;
+  .commented{ 
     margin: 23px;    
     border: solid 1px rgb(173, 171, 171);
-    background-color: whitesmoke;
-    border-radius: 50px;
+    background-color: whitesmoke;    
     align-items: center;
   }
   .close, .delet-btn{
@@ -450,23 +513,54 @@ input[type='file'] {
     border: none;
     background: none;
     align-items: center;
-    margin-left: 5px;
   }
   .bnt-spaceProfile{
     display: flex;
     width: 5vw;
     justify-content: space-around;
+    margin-left: 52px;
+    justify-content: end;
+    align-items: center;
+  }
+  .btn-profile{
+    margin-left: 52px;
   }
   .exit{
     width: 60px;
+    height: 60px;
   }
   .pin{
-    width: 25px;
-    height: 33px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    display: flex;
   }
-  .img-perfil > img {
-    width: 17vw;
+  .img-perfil > img{
+    width: 9vw;
+  }
+  .img-profile{
+    height: 30vh;
+    width: 15vw;
+    border-radius: 100px;
+  }
+  .pic-profile{
+    height: 140px;
+    width: 140px;
+    border-radius: 100px;
+    object-fit: cover;
+    object-position: center;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .profileBox{
+    background-color:#00c3ac25;
+    border: solid 1px rgba(105, 105, 105, 0.904);
+    width: 41vw;
+    margin-left: 55px;
+    margin-top: 65px;
+  }
+  .edit-btn{
+  align-items: center;
   }
 }
-
-

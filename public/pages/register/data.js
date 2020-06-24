@@ -1,4 +1,7 @@
 export const registerLogin = (email, password, name, location) => {
+  if (email === '' || password === '' || name === '' || location === ''){
+    alert('Preencha os campos em branco');
+  }else{
   firebase.auth()
     .createUserWithEmailAndPassword(email, password)
     .then( ()=> firebase.auth().currentUser.updateProfile({ displayName: name }))
@@ -13,6 +16,8 @@ export const registerLogin = (email, password, name, location) => {
       };
       firebase.firestore().collection('users').doc(uid).set(user);
     })
-    .catch(() => {
+    .catch((error) => {
+      console.log(error)
     });
+  };
 };

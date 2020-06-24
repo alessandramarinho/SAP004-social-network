@@ -1,4 +1,3 @@
-// Aqui serão exportadas as funções que irão ser usadas
 export const userLogin = (email, password) => {
   firebase.auth()
     .signInWithEmailAndPassword(email, password)
@@ -31,13 +30,13 @@ export const loginGoogle = () => {
             name: currentUser.additionalUserInfo.profile.given_name,
             emailUser: currentUser.additionalUserInfo.profile.email,
             photoURL: currentUser.additionalUserInfo.profile.picture,
-            user_uid: currentUser.user.uid,
+            user_uid: currentUser.user.uid
           };
           firebase.firestore().collection('users').add(user);
           window.location = '#feed';
         } else {
           window.location = '#feed';
-        }
+        };
       });
   });
 };

@@ -42,7 +42,9 @@ Para ralizarmos o planejamento de nossa aplicação, utilizamos as determinadas 
 
 ### Protótipo
 Por meio da ferramenta *Figma*, elaboramos nosso protótipo no modelo *mobile first* e *Desktop*
-![Figma]() 
+![Figma Mobile]() 
+
+![Figma Desktop]() 
 
 ### Paleta de Cores
 Esta foi a paleta de cores escolhida para utilizar na nossa aplicação.
