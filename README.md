@@ -64,7 +64,7 @@ Foi utilizada a ferramenta Trello para determinar o que entregaríamos nas *Spri
 ![Mobile First Feed](public/pictures/sos-feed.png) 
 
 * Tela Desktop 
-
+git 
 ![Desktop Login](public/pictures/sos-home-desktop.png)
 
 ![Desktop Cadastro](public/pictures/sos-register-desktop.png)
