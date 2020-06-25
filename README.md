@@ -13,14 +13,14 @@
 
 ***
 
-## 1. Introdução
+## 1. Apresentação
 
 A **S.O.S Pets** é uma rede social que tem por obejtivo atender as pessoas que desejam trocar experiências com atividades voltadas a divulgação de animais abandonados, perdidos e que necessitam ser adotados. 
 
 Esta ferramenta proporcionará um aumento no número de contatos dos usuários, gerando mais facilidade para encontrar pessoas dispostas a realizar adoções conscientes ou que estejam interessadas em ajudar.
 Os usuários terão este canal único para encontrar o que precisam, seja um novo amigo pet ou troca de experiencias e objetivos em comum.
 
-Projeto: [S.O.S Pets]()
+Projeto: [S.O.S Pets](https://sospetslab.web.app)
 
 ## 2. Funcionamento
 
@@ -42,9 +42,9 @@ Para ralizarmos o planejamento de nossa aplicação, utilizamos as determinadas 
 
 ### Protótipo
 Por meio da ferramenta *Figma*, elaboramos nosso protótipo no modelo *mobile first* e *Desktop*
-![Figma Mobile]() 
+![Figma Mobile](public/pictures/figma-rede-social.png) 
 
-![Figma Desktop]() 
+![Figma Desktop](public/pictures/figma-rede-social-desktop.png) 
 
 ### Paleta de Cores
 Esta foi a paleta de cores escolhida para utilizar na nossa aplicação.
@@ -57,22 +57,22 @@ Foi utilizada a ferramenta Trello para determinar o que entregaríamos nas *Spri
 
 * Tela Mobile 
 
-![Mobile First Login]() 
+![Mobile First Login](public/pictures/sos-home.png) 
 
-![Mobile First Cadastro]() 
+![Mobile First Cadastro](public/pictures/sos-register.png) 
 
-![Mobile First Feed]() 
+![Mobile First Feed](public/pictures/sos-feed.png) 
 
 * Tela Desktop 
 
-![Desktop Login]()
+![Desktop Login](public/pictures/sos-home-desktop.png)
 
-![Desktop Cadastro]()
+![Desktop Cadastro](public/pictures/sos-register-desktop.png)
 
-![Desktop Feed]()
+![Desktop Feed](public/pictures/sos-feed-desktop.png)
 
 ## 6. Desenvolvedoras
 
-    • Adriana Silva de Jesus
-    • Alessandra Marinho
-    • Camila Roque
+    • [Adriana Silva de Jesus](https://github.com/sjadriana)
+    • [Alessandra Marinho](https://github.com/alessandramarinho)
+    • [Camila Roque](https://github.com/milaroque)
