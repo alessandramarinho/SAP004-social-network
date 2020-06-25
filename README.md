@@ -73,6 +73,6 @@ Foi utilizada a ferramenta Trello para determinar o que entregaríamos nas *Spri
 
 ## 6. Desenvolvedoras
 
-    • [Adriana Silva de Jesus](https://github.com/sjadriana)
-    • [Alessandra Marinho](https://github.com/alessandramarinho)
-    • [Camila Roque](https://github.com/milaroque)
+* [Adriana Silva](https://github.com/sjadriana)
+* [Alessandra Marinho](https://github.com/alessandramarinho)
+* [Camila Roque](https://github.com/milaroque)
